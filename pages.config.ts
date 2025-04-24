@@ -32,11 +32,18 @@ export default defineUniPages({
         pagePath: 'pages/index/index',
         text: '首页',
       },
+      // {
+      //   iconPath: 'static/tabbar/example.png',
+      //   selectedIconPath: 'static/tabbar/exampleHL.png',
+      //   pagePath: 'pages/about/about',
+      //   text: '关于',
+      // },
+      // 我的
       {
-        iconPath: 'static/tabbar/example.png',
-        selectedIconPath: 'static/tabbar/exampleHL.png',
-        pagePath: 'pages/about/about',
-        text: '关于',
+        iconPath: 'static/tabbar/personal.png',
+        selectedIconPath: 'static/tabbar/personalHL.png',
+        pagePath: 'pages/my/index',
+        text: '我的',
       },
     ],
   },
