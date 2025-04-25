@@ -113,6 +113,7 @@ export default defineManifestConfig({
     appid: VITE_WX_APPID,
     setting: {
       urlCheck: false,
+      ignoreUploadUnusedFiles: false,
     },
     usingComponents: true,
     // __usePrivacyCheck__: true,

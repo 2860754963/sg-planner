@@ -7,19 +7,27 @@
 </route>
 <template>
   <view class="flex flex-col h-full">
-    <view
-      class="bg-white overflow-hidden pt-2 px-4"
-      :style="{ marginTop: safeAreaInsets?.top + 'px' }"
-    >
-      这是首页
+    <view class="bg-white overflow-hidden px-4" :style="{ marginTop: safeAreaInsets?.top + 'px' }">
+      <wd-navbar title="今日" custom-style="background-color: transparent !important;"></wd-navbar>
+      <view>
+        <view>
+          <view>{{ currentYearMonth }}</view>
+          <view class="h-sm w-full">
+            <sgCalendar></sgCalendar>
+          </view>
+        </view>
+      </view>
     </view>
     <sgTabBar></sgTabBar>
   </view>
 </template>
 
 <script lang="ts" setup>
-import sgTabBar from '@/components/tabBar/sgTabBar.vue'
+import sgTabBar from '@/components/sgTabBar/sgTabBar.vue'
+import sgCalendar from '@/components/sgCalendar/sgCalendar.vue'
 const { safeAreaInsets } = uni.getSystemInfoSync()
+
+const currentYearMonth = new Date().toLocaleString('zh-CN', { month: 'long', year: 'numeric' })
 </script>
 
 <style></style>
