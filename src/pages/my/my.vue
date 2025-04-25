@@ -2,7 +2,6 @@
 {
   style: {
     navigationStyle: 'custom',
-    navigationBarTitleText: 'My',
   },
 }
 </route>
@@ -17,9 +16,10 @@
 </template>
 
 <script lang="ts" setup>
-//
-
 const { safeAreaInsets } = uni.getSystemInfoSync()
+defineOptions({
+  name: 'my',
+})
 </script>
 
 <style lang="scss" scoped>
