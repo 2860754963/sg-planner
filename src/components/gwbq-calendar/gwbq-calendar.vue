@@ -8,7 +8,7 @@
     ></view>
     <view
       v-if="insert || show"
-      class="uni-calendar__content"
+      class="uni-calendar__content rounded-3xl overflow-hidden"
       :class="{ 'uni-calendar--fixed': !insert, 'uni-calendar--ani-show': aniMaskShow }"
     >
       <view v-if="!insert" class="uni-calendar__header uni-calendar--fixed-top">
@@ -222,7 +222,7 @@ export default {
       aniMaskShow: false,
       touchStartX: 0, // 触屏起始点x
       touchStartY: 0, // 触屏起始点y
-      height: 266,
+      height: 290,
       current: 0,
     }
   },
@@ -406,7 +406,8 @@ export default {
         .select('#calendarPanel')
         .boundingClientRect((rect) => {
           if (rect) {
-            this.height = rect.height
+            console.log('🚀🚀🚀 ~ .boundingClientRect ~ rect🚀🚀🚀', rect)
+            // this.height = rect.height
           }
         })
         .exec()

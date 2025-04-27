@@ -1,9 +1,13 @@
 <script setup lang="ts">
 import { onLaunch, onShow, onHide } from '@dcloudio/uni-app'
 import 'abortcontroller-polyfill/dist/abortcontroller-polyfill-only'
+import { useTabBarStore } from '@/store'
+
+const tabBarStore = useTabBarStore()
 
 onLaunch(() => {
   console.log('App Launch')
+  tabBarStore.clearSelectedIndex()
 })
 onShow(() => {
   console.log('App Show')

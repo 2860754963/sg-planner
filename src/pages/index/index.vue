@@ -6,19 +6,23 @@
 }
 </route>
 <template>
-  <view class="flex flex-col h-full">
-    <view class="bg-white overflow-hidden px-4" :style="{ marginTop: safeAreaInsets?.top + 'px' }">
-      <wd-navbar title="今日" custom-style="background-color: transparent !important;"></wd-navbar>
-      <view>
-        <view>
-          <view>{{ currentYearMonth }}</view>
-          <view class="h-sm w-full">
-            <sgCalendar></sgCalendar>
-          </view>
-        </view>
+  <view class="bg-[#98bcff] h-screen">
+    <view :style="{ paddingTop: safeAreaInsets?.top + 'px' }">
+      <wd-navbar custom-style="background-color: transparent !important;color: #fff !important ;">
+        <template #title>
+          <view class="text-white">首页</view>
+        </template>
+        <template #left>
+          <wd-icon name="search" size="18" />
+        </template>
+      </wd-navbar>
+    </view>
+    <view>
+      <view class="h-sm pl-2 pr-2">
+        <sgCalendar></sgCalendar>
       </view>
     </view>
-    <sgTabBar></sgTabBar>
+    <sgTabBar />
   </view>
 </template>
 

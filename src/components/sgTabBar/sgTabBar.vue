@@ -3,7 +3,6 @@
     v-model="selectedIndex"
     shape="round"
     fixed
-    placeholder
     safeAreaInsetBottom
     @change="handleTabbarChange"
   >
@@ -37,7 +36,8 @@ const handleTabbarChange = ({ value }) => {
 }
 
 const handleSwitchTab = (url: string) => {
-  uni.switchTab({ url })
+  console.log('🚀🚀🚀 ~ handleSwitchTab ~ url🚀🚀🚀', url)
+  uni.switchTab({ url: '/' + url })
 }
 </script>
 

@@ -8,15 +8,15 @@
 </route> -->
 
 <template>
-  <view class="w-full h-full bg-blue">
-    sgCalendar
-
-    <gwbqCalendar></gwbqCalendar>
-  </view>
+  <gwbqCalendar :insert="true" :lunar="true" @change="calendarChange" />
 </template>
 
 <script lang="ts" setup name="sgCalendar">
 import gwbqCalendar from '../gwbq-calendar/gwbq-calendar.vue'
+
+const calendarChange = (event: any) => {
+  console.log('🚀🚀🚀 ~ calendarChange ~ event🚀🚀🚀', event)
+}
 </script>
 
 <style lang="scss" scoped>
