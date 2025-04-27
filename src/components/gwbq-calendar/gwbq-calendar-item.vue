@@ -229,10 +229,12 @@ $uni-color-primary: #2979ff;
 }
 
 view.uni-calendar-item--isDay {
+  color: #fff !important;
+  background-color: #6a92fa;
   // background-color: $uni-color-primary;
   // opacity: 0.8;
   // color: #fff;
-  border: 1px solid #e43d33;
+
   border-radius: 50%;
 }
 
@@ -245,8 +247,8 @@ view.uni-calendar-item--checked {
   // background-color: $uni-color-primary;
   // color: #fff;
   // opacity: 0.8;
-  border: 1px solid #e43d33;
-  border-radius: 15rpx;
+  border: 1px solid #6a92fa;
+  border-radius: 50%;
 }
 
 .uni-calendar-item--multiple {

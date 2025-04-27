@@ -19,19 +19,35 @@
           <text class="uni-calendar__header-text uni-calendar--fixed-width">{{ okText }}</text>
         </view>
       </view>
-      <view class="uni-calendar__header">
-        <view class="uni-calendar__header-btn-box" @click.stop="pre">
+      <view class="uni-calendar__header flex justify-between items-center pl-xl pr-xl">
+        <!-- <view class="uni-calendar__header-btn-box" @click.stop="pre">
           <view class="uni-calendar__header-btn uni-calendar--left"></view>
-        </view>
+        </view> -->
         <picker mode="date" :value="date" fields="month" @change="bindDateChange">
-          <text class="uni-calendar__header-text">
+          <view class="text-[#679bf9] flex justify-center items-center">
+            <view class="text-6.4">{{ nowDate.month }}月</view>
+            <view class="text-3.2 flex flex-col items-center justify-center">
+              {{ nowDate.year }}
+              <wd-icon name="arrow-down"></wd-icon>
+            </view>
+          </view>
+          <!-- <text class="uni-calendar__header-text">
             {{ (nowDate.year || '') + ' / ' + (nowDate.month || '') }}
-          </text>
+          </text> -->
         </picker>
-        <view class="uni-calendar__header-btn-box" @click.stop="next">
-          <view class="uni-calendar__header-btn uni-calendar--right"></view>
+
+        <view @click="backtoday">{{ todayText }}</view>
+
+        <view
+          class="bg-[#679bf9] rounded-lg w-10 h-7.5 color-white flex justify-between items-center pl-3 pr-3 text-3"
+        >
+          <wd-icon name="add" />
+          <view class="color-white">备注</view>
         </view>
-        <text class="uni-calendar__backtoday" @click="backtoday">{{ todayText }}</text>
+        <!-- <view class="uni-calendar__header-btn-box" @click.stop="next">
+          <view class="uni-calendar__header-btn uni-calendar--right"></view>
+        </view> -->
+        <!-- <text class="uni-calendar__backtoday" @click="backtoday">{{ todayText }}</text> -->
       </view>
       <view class="uni-calendar__box">
         <view v-if="showMonth" class="uni-calendar__box-bg">
@@ -407,7 +423,7 @@ export default {
         .boundingClientRect((rect) => {
           if (rect) {
             console.log('🚀🚀🚀 ~ .boundingClientRect ~ rect🚀🚀🚀', rect)
-            // this.height = rect.height
+            this.height = rect.height + 14
           }
         })
         .exec()
@@ -599,9 +615,6 @@ $uni-text-color-grey: #999;
   /* #ifndef APP-NVUE */
   display: flex;
   /* #endif */
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
   height: 50px;
   border-bottom-color: $uni-border-color;
   border-bottom-style: solid;
