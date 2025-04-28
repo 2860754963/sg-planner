@@ -28,7 +28,7 @@ const selectedDateInfo = [
 ]
 
 const calendarChange = (event: any) => {
-  console.log('🚀🚀🚀 ~ calendarChange ~ event🚀🚀🚀', event)
+  // console.log('🚀🚀🚀 ~ calendarChange ~ event🚀🚀🚀', event)
 }
 </script>
 

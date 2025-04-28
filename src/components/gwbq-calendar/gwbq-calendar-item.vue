@@ -206,7 +206,7 @@ $uni-color-primary: #2979ff;
   justify-content: center;
   // width: 100rpx;
   // height: 100rpx;
-  padding: 5rpx 0 8rpx;
+  padding: 11rpx;
 }
 
 .uni-calendar-item__weeks-box-circle {
@@ -229,13 +229,16 @@ $uni-color-primary: #2979ff;
 }
 
 view.uni-calendar-item--isDay {
-  color: #fff !important;
+  background: radial-gradient(circle, #6c96f8 60%, #90bffd 40%);
   background-color: #6a92fa;
   // background-color: $uni-color-primary;
   // opacity: 0.8;
   // color: #fff;
 
   border-radius: 50%;
+  & text {
+    color: #fff !important;
+  }
 }
 
 .uni-calendar-item--extra {
@@ -268,7 +271,7 @@ view.uni-calendar-item--checked {
 }
 
 .uni-calendar-item--zhoumo {
-  color: #e43d33;
+  color: #ff84af;
 }
 
 .uni-calendar-jieqi {

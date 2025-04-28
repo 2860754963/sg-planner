@@ -423,7 +423,7 @@ export default {
         .boundingClientRect((rect) => {
           if (rect) {
             console.log('🚀🚀🚀 ~ .boundingClientRect ~ rect🚀🚀🚀', rect)
-            this.height = rect.height + 14
+            this.height = rect.height + 40
           }
         })
         .exec()
@@ -502,6 +502,7 @@ export default {
      * @param {Object} weeks
      */
     choiceDate(weeks) {
+      console.log('🚀🚀🚀 ~ choiceDate ~ weeks🚀🚀🚀', weeks)
       if (weeks.disable) return
       this.calendar = weeks
       // 设置多选

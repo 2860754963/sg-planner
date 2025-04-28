@@ -8,9 +8,13 @@
 <template>
   <view class="bg-[#98bcff] h-screen">
     <view :style="{ paddingTop: safeAreaInsets?.top + 'px' }">
-      <wd-navbar custom-style="background-color: transparent !important;color: #fff !important ;">
+      <wd-navbar
+        placeholder
+        custom-style="background-color: transparent !important;color: #fff !important ; border-bottom-color: none !important;"
+        :bordered="false"
+      >
         <template #title>
-          <view class="text-white">首页</view>
+          <view class="text-white">时光慢慢走</view>
         </template>
         <template #left>
           <wd-icon name="search" size="18" />
@@ -32,6 +36,7 @@ import sgCalendar from '@/components/sgCalendar/sgCalendar.vue'
 const { safeAreaInsets } = uni.getSystemInfoSync()
 
 const currentYearMonth = new Date().toLocaleString('zh-CN', { month: 'long', year: 'numeric' })
+// .is-border::after
 </script>
 
-<style></style>
+<style lang="scss" scoped></style>

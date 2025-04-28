@@ -7,9 +7,15 @@
 </route>
 
 <template>
-  <view class="bg-[#98bcff]" :style="{ marginTop: safeAreaInsets?.top + 'px' }">
-    <wd-navbar title="我的" custom-style="background-color: transparent !important;"></wd-navbar>
-
+  <view
+    class="bg-white overflow-hidden pt-2 px-4"
+    :style="{ marginTop: safeAreaInsets?.top + 'px' }"
+  >
+    <wd-navbar
+      title="我的小世界"
+      custom-style="background-color: transparent !important;"
+    ></wd-navbar>
+    <view>暂未开发哦</view>
     <sgTabBar />
   </view>
 </template>
