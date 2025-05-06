@@ -15,7 +15,7 @@
       title="我的小世界"
       custom-style="background-color: transparent !important;"
     ></wd-navbar>
-    <view>暂未开发哦</view>
+    <view>敬请期待！</view>
     <sgTabBar />
   </view>
 </template>

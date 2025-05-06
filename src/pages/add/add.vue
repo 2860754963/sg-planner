@@ -24,16 +24,13 @@
         <wd-icon name="search" size="18" />
       </template>
     </wd-navbar>
-    <view>
-      <wd-img width="350" height="350" mode="aspectFill" :src="pic1" enable-preview />
-    </view>
+    <view>敬请期待！</view>
     <sgTabBar />
   </view>
 </template>
 
 <script lang="ts" setup>
 import sgTabBar from '@/components/sgTabBar/sgTabBar.vue'
-import pic1 from '@/static/images/pic1.jpg'
 
 import { TestEnum } from '@/typings'
 import PLATFORM from '@/utils/platform'

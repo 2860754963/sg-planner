@@ -22,8 +22,14 @@
       </wd-navbar>
     </view>
     <view>
-      <view class="h-sm pl-2 pr-2">
+      <view class="pl-2 pr-2">
         <sgCalendar></sgCalendar>
+      </view>
+      <view class="mt-10 w-full flex flex-col flex-items-center gap-4 color-[#f8f8ff]">
+        <view>时光像奔跑的火车</view>
+        <view>记忆它是乘客</view>
+        <view>载着悲伤快乐</view>
+        <view>....</view>
       </view>
     </view>
     <sgTabBar />

@@ -42,7 +42,7 @@
           class="bg-[#679bf9] rounded-lg w-10 h-7.5 color-white flex justify-between items-center pl-3 pr-3 text-3"
         >
           <wd-icon name="add" />
-          <view class="color-white">备注</view>
+          <view class="color-white" @click="handleAdd">备注</view>
         </view>
         <!-- <view class="uni-calendar__header-btn-box" @click.stop="next">
           <view class="uni-calendar__header-btn uni-calendar--right"></view>
@@ -324,6 +324,14 @@ export default {
     // this.setDay
   },
   methods: {
+    handleAdd() {
+      uni.showToast({
+        title: '敬请期待！',
+        icon: 'none',
+        duration: 1000,
+        mask: true,
+      })
+    },
     // 取消穿透
     clean() {},
     bindDateChange(e) {
@@ -341,8 +349,8 @@ export default {
      * 触摸结束
      **/
     touchEnd(e) {
-      let deltaX = e.changedTouches[0].clientX - this.touchStartX
-      let deltaY = e.changedTouches[0].clientY - this.touchStartY
+      const deltaX = e.changedTouches[0].clientX - this.touchStartX
+      const deltaY = e.changedTouches[0].clientY - this.touchStartY
       // X轴的滑动距离大于 delta，且此次事件是以X轴移动为主（左滑或者右滑）；
       if (Math.abs(deltaX) > this.delta && Math.abs(deltaX) > Math.abs(deltaY)) {
         if (deltaX >= 0) {
@@ -357,7 +365,7 @@ export default {
       }
     },
     changeSwipper(e) {
-      let curr = e.detail.current
+      const curr = e.detail.current
       if (curr - this.current == 1 || curr - this.current == -2) {
         this.next()
       } else {
@@ -375,8 +383,8 @@ export default {
       this.nowDate = this.calendar = this.cale.getInfo(date)
     },
     initChoose(type) {
-      for (var i in this.weeks) {
-        var arr = this.weeks[i]
+      for (const i in this.weeks) {
+        const arr = this.weeks[i]
         arr.map((item) => {
           if (!item.disable) {
             delete item.isChoose
@@ -417,13 +425,13 @@ export default {
       }
     },
     changeHeight() {
-      var query = uni.createSelectorQuery().in(this)
+      const query = uni.createSelectorQuery().in(this)
       query
         .select('#calendarPanel')
         .boundingClientRect((rect) => {
           if (rect) {
             console.log('🚀🚀🚀 ~ .boundingClientRect ~ rect🚀🚀🚀', rect)
-            this.height = rect.height + 40
+            this.height = rect.height
           }
         })
         .exec()
@@ -475,7 +483,7 @@ export default {
      * 选择月份触发
      */
     monthSwitch() {
-      let { year, month } = this.nowDate
+      const { year, month } = this.nowDate
       this.$emit('monthSwitch', {
         year,
         month: Number(month),
@@ -486,7 +494,7 @@ export default {
      * @param {Object} name
      */
     setEmit(name) {
-      let { year, month, date, fullDate, lunar, extraInfo } = this.calendar
+      const { year, month, date, fullDate, lunar, extraInfo } = this.calendar
       this.$emit(name, {
         range: this.cale.multipleStatus,
         year,
@@ -514,7 +522,7 @@ export default {
      * 回到今天
      */
     backtoday() {
-      let date = this.cale.getDate(new Date()).fullDate
+      const date = this.cale.getDate(new Date()).fullDate
       // this.cale.setDate(date)
       this.init(date)
       this.change()
@@ -617,6 +625,7 @@ $uni-text-color-grey: #999;
   display: flex;
   /* #endif */
   height: 50px;
+
   border-bottom-color: $uni-border-color;
   border-bottom-style: solid;
   border-bottom-width: 1px;
@@ -674,6 +683,7 @@ $uni-text-color-grey: #999;
 .uni-calendar__header-btn {
   width: 10px;
   height: 10px;
+
   border-top-color: $uni-color-subtitle;
   border-top-style: solid;
   border-top-width: 2px;
